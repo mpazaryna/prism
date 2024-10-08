@@ -17,8 +17,8 @@ PRISM (Private Research and Intelligence System for Markets) is an advanced, AI-
 PRISM follows a functional programming paradigm with a pipeline-driven approach, ensuring modularity, testability, and ease of extension. The core components include:
 
 - `pipeline.py`: Orchestrates the entire research process.
-- `company_management.py`: Manages the list of companies to research.
-- `data_collection.py`: Handles data gathering from various sources.
+- `company.py`: Manages the list of companies to research.
+- `collector.py`: Handles data gathering from various sources.
 - `analysis.py`: Contains AI-driven analysis functions.
 - `reporting.py`: Generates and formats reports.
 - `utils.py`: Houses utility functions used across the project.
