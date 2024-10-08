@@ -4,9 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["Matthew Pazaryna <52605785+mpazaryna@users.noreply.github.com>"]
 readme = "README.md"
+packages = [{include = "prism"}]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.10"
 
 
 [build-system]
