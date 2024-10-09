@@ -23,28 +23,23 @@ PRISM follows a functional programming paradigm with a pipeline-driven approach,
 - `reporting.py`: Generates and formats reports.
 - `utils.py`: Houses utility functions used across the project.
 
-For detailed setup instructions and usage guidelines, please refer to our [User Guide](https://github.com/mpazaryna/prism/wiki/User-Guide) in the wiki.
+## Available Tasks
 
-## Documentation
+PRISM uses Invoke to manage various development tasks. Here's a list of available tasks:
 
-Comprehensive documentation for PRISM is available in our GitHub wiki. We encourage you to explore the following resources:
+| Task | Command | Description |
+|------|---------|-------------|
+| Run all tests | `invoke test` | Runs the entire test suite using pytest |
+| Run integration tests | `invoke integration-test` | Runs only the integration tests |
+| Run unit tests | `invoke unit-test` | Runs all tests except integration tests |
+| Lint code | `invoke lint` | Runs flake8 and mypy for code linting |
+| Format code | `invoke format` | Formats the codebase using black and isort |
+| Run pre-commit hooks | `invoke pre-commit` | Runs pre-commit hooks on all files |
+| Generate documentation | `invoke pdoc` | Generates API documentation using pdoc |
+| Run all tasks | `invoke all` | Runs format, lint, and test tasks in sequence |
 
-- [Project Wiki](https://github.com/mpazaryna/prism/wiki): Detailed documentation, guides, and best practices.
+To run a task, use the `invoke` command followed by the task name. For example:
 
-## Project Management
-
-We use GitHub Projects to manage the development of PRISM. You can view our current progress, upcoming features, and overall project roadmap here:
-
-[PRISM Project Board](https://github.com/users/mpazaryna/projects/19/views/1)
-
-## Contributing
-
-We welcome contributions to PRISM! Whether it's bug reports, feature requests, or code contributions, your input is valuable. Please check our [Contribution Guidelines](https://github.com/mpazaryna/prism/wiki/Contributing) in the wiki before getting started.
-
-## License
-
-PRISM is released under the [MIT License](LICENSE).
-
-## Contact
-
-For questions, suggestions, or collaboration inquiries, please open an issue in our GitHub repository or contact the project maintainers directly.
+```shell
+invoke test
+```
