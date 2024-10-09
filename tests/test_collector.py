@@ -2,8 +2,17 @@
 This module contains tests for the data collection functionality of PRISM.
 """
 
-from prism.collector import (collect_all, collect_company_info,
-                             collect_industry_info, collect_market_trends)
+import os
+
+import pytest
+
+from prism.collector.collector import (
+    collect_all,
+    collect_company_info,
+    collect_industry_info,
+    collect_market_trends,
+)
+from prism.collector.collector_perplexity import get_perplexity_response
 
 
 def test_collect_company_info():
@@ -65,3 +74,44 @@ def test_collect_all():
     assert all_info["company_info"]["name"] == company_name
     assert all_info["industry_info"]["name"] == industry
     assert isinstance(all_info["market_trends"], list)
+
+
+@pytest.mark.integration
+@pytest.fixture
+def api_key():
+    key = os.environ.get("PERPLEXITY_API_KEY")
+    if not key:
+        pytest.skip("PERPLEXITY_API_KEY environment variable not set")
+    return key
+
+
+@pytest.mark.integration
+def test_get_perplexity_response(api_key):
+    # Test data
+    query = "What do you know about Mount Vernon Mills?"
+    company_domain = "mvmills.com"
+
+    try:
+        # Call the function
+        result = get_perplexity_response(query, api_key, company_domain)
+
+        # Assertions
+        assert isinstance(result, str)
+        assert len(result) > 0
+        assert "Mount Vernon Mills" in result
+
+        # Check if the log file was created and contains the response
+        log_file_path = "logs/collector_perplexity.log"
+        assert os.path.exists(log_file_path)
+
+        with open(log_file_path, "r") as log_file:
+            log_content = log_file.read()
+            assert f"Perplexity response for query '{query}'" in log_content
+            assert result in log_content
+
+    except Exception as e:
+        pytest.fail(f"Test failed with exception: {str(e)}")
+
+
+if __name__ == "__main__":
+    pytest.main([__file__])

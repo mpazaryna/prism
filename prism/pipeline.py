@@ -5,12 +5,16 @@ This module contains the main pipeline functionality for PRISM.
 from typing import Any, Dict, List
 
 from prism.analysis import perform_comprehensive_analysis
-from prism.collector import collect_all
+from prism.collector.collector import collect_all
 from prism.company import add_company
 from prism.reporting import generate_full_report
-from prism.utils.error_handling import (AnalysisError, DataCollectionError,
-                                        ReportingError, handle_errors,
-                                        safe_execute)
+from prism.utils.error_handling import (
+    AnalysisError,
+    DataCollectionError,
+    ReportingError,
+    handle_errors,
+    safe_execute,
+)
 from prism.utils.logging import log_function_call, pipeline_logger
 
 

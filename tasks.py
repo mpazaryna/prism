@@ -19,6 +19,28 @@ def test(c):
 
 
 @task
+def integration_test(c):
+    """
+    Run integration tests using pytest.
+
+    Args:
+        c: The context object provided by Invoke.
+    """
+    c.run("pytest -v -m integration")
+
+
+@task
+def unit_test(c):
+    """
+    Run all tests except integration tests using pytest.
+
+    Args:
+        c: The context object provided by Invoke.
+    """
+    c.run("pytest -v -m 'not integration'")
+
+
+@task
 def lint(c):
     """
     Run linters on the codebase using flake8 and mypy.
