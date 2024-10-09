@@ -2,13 +2,10 @@
 This module contains tests for the reporting functionality of PRISM.
 """
 
-from prism.reporting import (
-    generate_executive_summary,
-    generate_financial_section,
-    generate_full_report,
-    generate_market_position_section,
-    generate_trends_section,
-)
+from prism.reporting import (generate_executive_summary,
+                             generate_financial_section, generate_full_report,
+                             generate_market_position_section,
+                             generate_trends_section)
 
 
 def test_generate_executive_summary():

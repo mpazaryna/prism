@@ -2,12 +2,8 @@
 This module contains tests for the data collection functionality of PRISM.
 """
 
-from prism.collector import (
-    collect_all,
-    collect_company_info,
-    collect_industry_info,
-    collect_market_trends,
-)
+from prism.collector import (collect_all, collect_company_info,
+                             collect_industry_info, collect_market_trends)
 
 
 def test_collect_company_info():

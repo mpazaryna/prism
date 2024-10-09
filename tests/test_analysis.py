@@ -2,12 +2,9 @@
 This module contains tests for the analysis functionality of PRISM.
 """
 
-from prism.analysis import (
-    analyze_company_financials,
-    analyze_market_position,
-    analyze_trends_impact,
-    perform_comprehensive_analysis,
-)
+from prism.analysis import (analyze_company_financials,
+                            analyze_market_position, analyze_trends_impact,
+                            perform_comprehensive_analysis)
 
 
 def test_analyze_company_financials():
