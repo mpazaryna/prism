@@ -1,5 +1,6 @@
 """
 This module serves as a central dispatcher for various data collection functions in PRISM.
+
 It coordinates the gathering of information about companies, industries, and other relevant data.
 """
 

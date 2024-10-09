@@ -47,7 +47,7 @@ def setup_logger(name: str, log_file: str, level: int = logging.INFO) -> logging
 
 def log_function_call(logger: logging.Logger):
     """
-    Decorator to log function calls.
+    Decorate a function to log function calls.
 
     Args:
     logger (logging.Logger): Logger instance to use for logging.

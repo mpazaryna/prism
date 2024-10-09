@@ -2,7 +2,7 @@
 This module provides functions for generating reports based on collected and analyzed data in PRISM.
 """
 
-from typing import Any, Dict, List
+from typing import Any, Dict
 
 ReportSection = Dict[str, str]
 Report = Dict[str, Any]

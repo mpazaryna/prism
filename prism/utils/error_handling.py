@@ -34,7 +34,7 @@ class ReportingError(PRISMError):
 
 def handle_errors(func: Callable) -> Callable:
     """
-    Decorator to handle errors in functions.
+    Decorate a function to handle errors.
 
     Args:
     func (Callable): The function to decorate.

@@ -1,3 +1,9 @@
+"""
+This module contains tasks for managing the codebase using Invoke.
+
+Tasks include running tests, linting, formatting, and generating documentation.
+"""
+
 from invoke import task
 
 

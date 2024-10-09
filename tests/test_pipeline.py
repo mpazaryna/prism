@@ -1,6 +1,9 @@
-import pytest
+"""
+This module contains tests for the pipeline functionality of PRISM.
+"""
 
-from prism.collector import collect_all
+import pytest  # noqa: F401
+
 from prism.company import add_company
 from prism.pipeline import run_pipeline
 
@@ -8,6 +11,9 @@ from prism.pipeline import run_pipeline
 # Test cases for run_pipeline
 def test_run_pipeline():
     # Prepare test data
+    """
+    Test the function to ensure it runs the pipeline correctly.
+    """
     test_companies = [
         {"name": "TechCorp", "industry": "Technology"},
         {"name": "ExistingCompany", "industry": "Finance"},

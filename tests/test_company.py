@@ -1,5 +1,5 @@
 """
-This module contains tests for the company management functionality of PRISM.
+This module contains tests for the company functionality of PRISM.
 """
 
 import pytest
