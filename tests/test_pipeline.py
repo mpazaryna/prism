@@ -10,10 +10,13 @@ from prism.pipeline import run_pipeline
 
 # Test cases for run_pipeline
 def test_run_pipeline():
-    # Prepare test data
     """
     Test the function to ensure it runs the pipeline correctly.
+
+    This test prepares test data, simulates an existing company,
+    runs the pipeline, and checks the results against expected outcomes.
     """
+    # Prepare test data
     test_companies = [
         {"name": "TechCorp", "industry": "Technology"},
         {"name": "ExistingCompany", "industry": "Finance"},

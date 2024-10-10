@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = "4e4a01019a2b4a2c9e9bbdc4915212e4"
+API_KEY = "insert_key_here"
 COMPANY = "Mount Vernon Mills, Inc."
 URL = f"https://newsapi.org/v2/everything?q={COMPANY}&apiKey={API_KEY}"
 
