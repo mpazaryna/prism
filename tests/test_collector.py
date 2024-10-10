@@ -77,23 +77,14 @@ def test_collect_all():
 
 
 @pytest.mark.integration
-@pytest.fixture
-def api_key():
-    key = os.environ.get("PERPLEXITY_API_KEY")
-    if not key:
-        pytest.skip("PERPLEXITY_API_KEY environment variable not set")
-    return key
-
-
-@pytest.mark.integration
-def test_get_perplexity_response(api_key):
+def test_get_perplexity_response():
     # Test data
     query = "What do you know about Mount Vernon Mills?"
     company_domain = "mvmills.com"
 
     try:
         # Call the function
-        result = get_perplexity_response(query, api_key, company_domain)
+        result = get_perplexity_response(query, company_domain)
 
         # Assertions
         assert isinstance(result, str)
@@ -111,7 +102,3 @@ def test_get_perplexity_response(api_key):
 
     except Exception as e:
         pytest.fail(f"Test failed with exception: {str(e)}")
-
-
-if __name__ == "__main__":
-    pytest.main([__file__])
