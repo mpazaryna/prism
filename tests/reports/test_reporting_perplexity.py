@@ -6,8 +6,11 @@ from prism.reporting import generate_perplexity_section
 
 def test_generate_perplexity_section_with_actual_data():
     # Define the inputs
-    query = "Apple"
-    company_domain = "apple.com"
+    # query = "Apple"
+    # company_domain = "apple.com"
+
+    query = "Provide as much information as possible about Cotswold Industries"
+    company_domain = "cotswoldindustries.com"
 
     # Get the actual data using get_perplexity_response
     try:
