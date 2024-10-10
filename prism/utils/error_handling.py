@@ -5,6 +5,8 @@ This module provides error handling functionality for PRISM.
 from functools import wraps
 from typing import Any, Callable
 
+from requests.exceptions import RequestException, Timeout
+
 from .logging import prism_logger
 
 
@@ -74,3 +76,44 @@ def safe_execute(func: Callable, *args, **kwargs) -> Any:
     except Exception as e:
         prism_logger.error(f"Error executing {func.__name__}: {str(e)}")
         return None
+
+
+def handle_request_error(exception: RequestException, api_name: str, response, logger):
+    """
+    Handle request exceptions for API calls.
+
+    Args:
+        exception (RequestException): The caught exception.
+        api_name (str): Name of the API being called.
+        response: The response object from the request.
+        logger: The logger object to use for logging.
+
+    Raises:
+        TimeoutError: If a 524 error is received.
+        RequestException: For all other request exceptions.
+    """
+    logger.error(f"Error making request to {api_name}: {str(exception)}")
+    if response.status_code == 524:
+        logger.error("Received a 524 error (Origin Time-out)")
+        raise TimeoutError(f"Received a 524 error (Origin Time-out) from {api_name}")
+    logger.error(f"Response content: {response.text}")
+    raise exception
+
+
+def handle_timeout_error(exception: Timeout, api_name: str, timeout: int, logger):
+    """
+    Handle timeout errors for API calls.
+
+    Args:
+        exception (Timeout): The caught timeout exception.
+        api_name (str): Name of the API being called.
+        timeout (int): The timeout value that was set for the request.
+        logger: The logger object to use for logging.
+
+    Raises:
+        TimeoutError: Always raised with a descriptive message.
+    """
+    logger.error(f"Request to {api_name} timed out after {timeout} seconds")
+    raise TimeoutError(
+        f"Request to {api_name} timed out after {timeout} seconds"
+    ) from exception
