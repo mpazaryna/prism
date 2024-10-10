@@ -8,6 +8,8 @@ packages = [{include = "prism"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+yfinance = "^0.2.44"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
