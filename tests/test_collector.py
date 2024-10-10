@@ -6,12 +6,9 @@ import os
 
 import pytest
 
-from prism.collector.collector import (
-    collect_all,
-    collect_company_info,
-    collect_industry_info,
-    collect_market_trends,
-)
+from prism.collector.collector import (collect_all, collect_company_info,
+                                       collect_industry_info,
+                                       collect_market_trends)
 from prism.collector.collector_perplexity import get_perplexity_response
 
 

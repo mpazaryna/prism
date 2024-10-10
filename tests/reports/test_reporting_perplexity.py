@@ -28,7 +28,3 @@ def test_generate_perplexity_section_with_actual_data():
     with open(output_file_path, "w") as file:
         file.write(f"Title: {perplexity_section['title']}\n")
         file.write(f"Content: {perplexity_section['content']}\n")
-
-
-# Call the test function
-test_generate_perplexity_section_with_actual_data()
