@@ -9,7 +9,15 @@ from prism.utils.logging import setup_logger
 logger = setup_logger("collector_perplexity", "logs/collector_perplexity.log")
 
 
-def get_perplexity_response(query, api_key, company_domain):
+def get_perplexity_response(query, company_domain):
+    api_key = os.environ.get("PERPLEXITY_API_KEY")
+
+    if not api_key:
+        logger.error("API key is not set in the environment variables.")
+        raise ValueError(
+            "API key is required but not set in the environment variables."
+        )
+
     url = "https://api.perplexity.ai/chat/completions"
 
     payload = json.dumps(
@@ -71,5 +79,5 @@ if __name__ == "__main__":
     api_key = os.environ.get("PERPLEXITY_API_KEY")
     query = "What do you know about Mount Vernon Mills?"
     company_domain = "mvmills.com"
-    result = get_perplexity_response(query, api_key, company_domain)
+    result = get_perplexity_response(query, company_domain)
     print(result)

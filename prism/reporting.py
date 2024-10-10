@@ -111,3 +111,19 @@ def generate_full_report(
             generate_trends_section(analysis_result["trends_impact"]),
         ],
     }
+
+
+def generate_perplexity_section(content: str) -> ReportSection:
+    """
+    Generate a report section on perplexity research.
+
+    Args:
+    content (str): The content of the perplexity research.
+
+    Returns:
+    ReportSection: A section with the title and content of the perplexity research.
+    """
+    return {
+        "title": "Perplexity Research",
+        "content": content,
+    }
