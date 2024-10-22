@@ -5,8 +5,8 @@ import requests
 from requests.exceptions import RequestException, Timeout
 from tenacity import retry, stop_after_attempt, wait_exponential
 
-from prism.utils.error_handling import handle_request_error, handle_timeout_error
-from prism.utils.logging import setup_logger
+from research_kit.utils.error_handling import handle_request_error, handle_timeout_error
+from research_kit.utils.logging import setup_logger
 
 # Set up the logger
 logger = setup_logger("collector_perplexity", "logs/collector_perplexity.log")

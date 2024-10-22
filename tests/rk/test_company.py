@@ -4,7 +4,7 @@ This module contains tests for the company functionality of PRISM.
 
 import pytest
 
-from prism.company import add_company, companies, gather_company_info
+from research_kit.company import add_company, companies, gather_company_info
 
 
 def test_add_company():

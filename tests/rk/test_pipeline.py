@@ -4,8 +4,8 @@ This module contains tests for the pipeline functionality of PRISM.
 
 import pytest  # noqa: F401
 
-from prism.company import add_company
-from prism.pipeline import run_pipeline
+from research_kit.company import add_company
+from research_kit.pipeline import run_pipeline
 
 
 # Test cases for run_pipeline

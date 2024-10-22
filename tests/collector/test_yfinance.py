@@ -2,7 +2,7 @@
 
 import pytest
 
-from prism.collector.collector_yfinance import get_ticker_info
+from research_kit.collector.collector_yfinance import get_ticker_info
 
 
 @pytest.mark.integration

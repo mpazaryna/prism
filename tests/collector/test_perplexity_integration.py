@@ -7,7 +7,7 @@ import os
 import pytest
 from requests.exceptions import RequestException, Timeout
 
-from prism.collector.collector_perplexity import get_perplexity_response
+from research_kit.collector.collector_perplexity import get_perplexity_response
 
 
 @pytest.mark.integration

@@ -1,7 +1,7 @@
 import os
 
-from prism.collector.collector_perplexity import get_perplexity_response
-from prism.reporting import generate_perplexity_section
+from research_kit.collector.collector_perplexity import get_perplexity_response
+from research_kit.reporting import generate_perplexity_section
 
 
 def test_generate_perplexity_section_with_actual_data():
