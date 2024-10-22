@@ -43,3 +43,5 @@ To run a task, use the `invoke` command followed by the task name. For example:
 ```shell
 invoke test
 ```
+
+bump
